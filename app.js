@@ -12,6 +12,10 @@ app.use(bdPars.json()); //body parser
 app.use(bdPars.urlencoded({
   extended: false
 })); //body parser
+app.use('*', (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+    next();
+});
 
 //start the server
 const PORT = 8080;
