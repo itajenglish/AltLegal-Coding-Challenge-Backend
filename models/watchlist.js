@@ -40,5 +40,19 @@ const getOneWatchList = (req, res, next) => {
   })
 }
 
+const updateWatchlist = (req, res, next) => {
+  const card_id = req.params.id;
+  const hashtag = req.body.hashtag;
+  console.log(card_id)
+  console.log(hashtag)
+  db.none('UPDATE Watchlist SET (hashtag) = ($1) WHERE card_id = $2',[hashtag, card_id])
+  .then(() => {
+    next();
+  })
+  .catch((err) => {
+    res.status(500).send('oh Ohh! something went wrong with updating your watchlist.');
+  })
+}
 
-module.exports = { getAllWatchlist, addNewWatchlist, getOneWatchList };
+
+module.exports = { getAllWatchlist, addNewWatchlist, getOneWatchList, updateWatchlist };
