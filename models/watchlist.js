@@ -29,5 +29,16 @@ const addNewWatchlist = (req, res, next) => {
   })
 }
 
+const getOneWatchList = (req, res, next) => {
+  db.one('SELECT * FROM Watchlist WHERE card_id = $1', [req.params.id])
+  .then((data) => {
+    res.send(data);
+  })
+  .catch((err) => {
+    console.log(`error: ${err}`);
+    res.status(500).send('oh Ohh! something went wrong with getting your watchlist.');
+  })
+}
 
-module.exports = { getAllWatchlist, addNewWatchlist };
+
+module.exports = { getAllWatchlist, addNewWatchlist, getOneWatchList };
