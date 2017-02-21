@@ -5,7 +5,7 @@ Node API Backend For Alt Legal Coding Challenge.
 ### Setup Instructions
 `Run $ npm install inside root folder`
 
-`Run $ createdb altlegal
+`Run $ createdb altlegal`
 
 `Change Database URL in lib/db/connectdb.js`
 
