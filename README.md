@@ -22,4 +22,5 @@ Node API Backend For Alt Legal Coding Challenge.
 - PG-Promise
 - Morgan
 - Cors
+- twitter-node-client
 
