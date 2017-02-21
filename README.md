@@ -9,7 +9,7 @@ Node API Backend For Alt Legal Coding Challenge.
 
 `Change Database URL in lib/db/connectdb.js`
 
-`Run $ psql -d altlegal -f db/schema.sql`
+`Run $ psql -d altlegal -f lib/db/schema.sql`
 
 `Run $ npm start or nodemon app.js`
 
