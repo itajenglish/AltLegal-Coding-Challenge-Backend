@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Twitter = require('twitter-node-client').Twitter;
-const twitter = new Twitter(require('../lib/config/twitter_config.js'));
+const twitter = new Twitter(require('../lib/config/twitter_config'));
 const { getAllWatchlist, addNewWatchlist, getOneWatchList, updateWatchlist, deleteOneWatchlist } = require('../models/watchlist');
 
 // Route Returns All Watchlist
