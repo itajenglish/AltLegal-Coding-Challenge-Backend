@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Twitter = require('twitter-node-client').Twitter;
 const twitter = new Twitter(require('../lib/config/twitter_config'));
-const { getAllWatchlist, addNewWatchlist, getOneWatchList, updateWatchlist } = require('../models/watchlist');
+const { getAllWatchlist, addNewWatchlist, getOneWatchList, updateWatchlist, deleteOneWatchlist } = require('../models/watchlist');
 
 // Route Returns All Watchlist
 router.get('/watchlist', getAllWatchlist, (req, res, next) => {});
@@ -19,6 +19,11 @@ router.get('/watchlist/:id', getOneWatchList, (req, res, next) => {});
 router.put('/watchlist/:id', updateWatchlist, (req, res, next) => {
   res.json({message: "Watchlist Updated!"})
 });
+
+//Delete Watchlist From Database
+router.delete('/watchlist/:id', deleteOneWatchlist, (req, res, next) => {
+  res.json({message: "Watchlist Deleted!"})
+})
 
 // Route Returns Tweets With Hashtag Passed In
 router.get('/tweets/:hashtag', (req, res, next) => {

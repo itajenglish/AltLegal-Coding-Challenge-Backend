@@ -4,7 +4,6 @@ const db = require('../lib/db/connectdb');
 const getAllWatchlist = (req, res, next) => {
   db.any('SELECT * FROM Watchlist')
   .then((data) => {
-    console.log(data);
     res.send(data);
     next();
   })
@@ -16,9 +15,9 @@ const getAllWatchlist = (req, res, next) => {
 
 // Add New Watchlist Into Database
 const addNewWatchlist = (req, res, next) => {
-  console.log(req.body);
   const hashtag = req.body.hashtag;
   const card_id = req.body.card_id;
+
   db.none('INSERT INTO Watchlist (hashtag, card_id) values ($1,$2)',[hashtag, card_id])
   .then(() => {
     next();
@@ -43,8 +42,7 @@ const getOneWatchList = (req, res, next) => {
 const updateWatchlist = (req, res, next) => {
   const card_id = req.params.id;
   const hashtag = req.body.hashtag;
-  console.log(card_id)
-  console.log(hashtag)
+
   db.none('UPDATE Watchlist SET (hashtag) = ($1) WHERE card_id = $2',[hashtag, card_id])
   .then(() => {
     next();
@@ -54,5 +52,17 @@ const updateWatchlist = (req, res, next) => {
   })
 }
 
+const deleteOneWatchlist = (req, res, next) => {
+  const card_id = req.params.id;
 
-module.exports = { getAllWatchlist, addNewWatchlist, getOneWatchList, updateWatchlist };
+  db.none('DELETE FROM Watchlist WHERE card_id = $1',[card_id])
+  .then(() => {
+    next();
+  })
+  .catch((err) => {
+    res.status(500).send('oh Ohh! something went wrong with deleting your watchlist.');
+  })
+}
+
+
+module.exports = { getAllWatchlist, addNewWatchlist, getOneWatchList, updateWatchlist, deleteOneWatchlist };
