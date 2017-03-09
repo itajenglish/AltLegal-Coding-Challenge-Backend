@@ -5,7 +5,7 @@ Node API Backend For Twitt-Watch React App.
 ### Setup Instructions
 `Run $ npm install inside root folder`
 
-`Run $ createdb twitt-Watch`
+`Run $ createdb twitt-watch`
 
 `Change Database URL in lib/db/connectdb.js`
 
