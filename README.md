@@ -1,11 +1,11 @@
-# AltLegal-Coding-Challenge-Backend
+# Twitt-Watch Backend
 
-Node API Backend For Alt Legal Coding Challenge.
+Node API Backend For Twitt-Watch React App.
 ------------
 ### Setup Instructions
 `Run $ npm install inside root folder`
 
-`Run $ createdb altlegal`
+`Run $ createdb twitt-Watch`
 
 `Change Database URL in lib/db/connectdb.js`
 
