@@ -24,7 +24,7 @@ app.listen(PORT, () => {
 const WATCHLIST_ROUTER = require('./routes/watchlist');
 
 app.get('/', (req, res) => {
-  res.send('Hello Alt Legal Team! Hope To Be Joining You Soon!!');
+  res.send('Welcome To The Twitt-Watch API');
 });
 
 app.use('/api', WATCHLIST_ROUTER);
