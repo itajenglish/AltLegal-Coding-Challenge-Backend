@@ -1,6 +1,6 @@
 # Twitt-Watch Backend
 
-Node API Backend For Twitt-Watch React App.
+Node API Backend For Twitt-Watch React App. - https://github.com/itajenglish/Twitt-Watch
 ------------
 ### Setup Instructions
 `Run $ npm install inside root folder`
